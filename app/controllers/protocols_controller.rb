@@ -1,4 +1,5 @@
 class ProtocolsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   # GET /protocols
   # GET /protocols.json
   def index
@@ -24,7 +25,7 @@ class ProtocolsController < ApplicationController
   # GET /protocols/new
   # GET /protocols/new.json
   def new
-    @protocol = Protocol.new
+    @protocol = current_user.protocols.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +35,13 @@ class ProtocolsController < ApplicationController
 
   # GET /protocols/1/edit
   def edit
-    @protocol = Protocol.find(params[:id])
+    @protocol = current_user.protocols.find(params[:id])
   end
 
   # POST /protocols
   # POST /protocols.json
   def create
-    @protocol = Protocol.new(params[:protocol])
+    @protocol = current_user.protocols.new(params[:protocol])
 
     respond_to do |format|
       if @protocol.save
@@ -56,7 +57,7 @@ class ProtocolsController < ApplicationController
   # PUT /protocols/1
   # PUT /protocols/1.json
   def update
-    @protocol = Protocol.find(params[:id])
+    @protocol = current_user.protocols.find(params[:id])
 
     respond_to do |format|
       if @protocol.update_attributes(params[:protocol])
@@ -72,7 +73,7 @@ class ProtocolsController < ApplicationController
   # DELETE /protocols/1
   # DELETE /protocols/1.json
   def destroy
-    @protocol = Protocol.find(params[:id])
+    @protocol = current_user.protocols.find(params[:id])
     @protocol.destroy
 
     respond_to do |format|
