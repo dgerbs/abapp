@@ -1,0 +1,9 @@
+<%= simple_form_for(@protocol, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :description, as: :text, input_html: { rows: "3"}, :placeholder => "Describe your protocol" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
