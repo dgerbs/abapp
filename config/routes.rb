@@ -1,5 +1,7 @@
 Abapp::Application.routes.draw do
 
+  get "users/show"
+
 resources :protocols
 
 devise_for :users

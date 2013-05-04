@@ -13,7 +13,11 @@
   <tbody>
     <% @protocols.each do |protocol| %>
       <tr>
-        <td><%= protocol.description %></td>
+        <td><%= protocol.description %>
+            <p>
+              <em>by <%= protocol.user.name %></em>
+            </p>
+        </td>
         <td><%= link_to 'Show', protocol %></td>
         <% if current_user == protocol.user %>
           <td><%= link_to 'Edit', edit_protocol_path(protocol) %></td>
