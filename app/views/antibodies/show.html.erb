@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+			  <b>Target:</b>
+			  <%= @antibody.target %>
+			</p>
+
+			<p>
+			  <b>Vendor:</b>
+			  <%= @antibody.vendor %>
+			</p>
+
+			<p>
+			  <b>Product ID:</b>
+			  <%= @antibody.product_ID %>
+			</p>
+
+			<p>
+			  <b>Description:</b>
+			  <%= @antibody.description %>
+			</p>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_antibody_path(@antibody) %> |
+<%= link_to 'Back', antibodies_path %>

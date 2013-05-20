@@ -1,0 +1,30 @@
+<h1>Listing Antibodies</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Target</th>
+      <th>Vendor</th>
+      <th>Product ID</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<% @antibodies.each do |antibody| %>
+  <tr>
+    <td><%= antibody.target %></td>
+    <td><%= antibody.vendor %></td>
+    <td><%= antibody.product_ID %></td>
+    <td><%= antibody.description %></td>
+    <td><%= link_to 'Show', antibody %></td>
+    <td><%= link_to 'Edit', edit_antibody_path(antibody) %></td>
+    <td><%= link_to 'Destroy', antibody, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Antibody', new_antibody_path %>
