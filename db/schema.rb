@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520023946) do
+ActiveRecord::Schema.define(:version => 20130521043022) do
 
   create_table "antibodies", :force => true do |t|
     t.string   "target"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(:version => 20130520023946) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "protocol_id"
   end
+
+  add_index "antibodies", ["protocol_id"], :name => "index_antibodies_on_protocol_id"
 
   create_table "protocols", :force => true do |t|
     t.string   "description"
@@ -45,8 +48,10 @@ ActiveRecord::Schema.define(:version => 20130520023946) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.integer  "antibody_id"
   end
 
+  add_index "users", ["antibody_id"], :name => "index_users_on_antibody_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

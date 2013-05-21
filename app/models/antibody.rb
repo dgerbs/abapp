@@ -6,4 +6,7 @@ class Antibody < ActiveRecord::Base
   validates :target, presence: true
   validates :vendor, presence: true
   
+  belongs_to :user
+  has_many :protocols, :through => :users
+
 end

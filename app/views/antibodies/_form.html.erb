@@ -1,9 +1,9 @@
 <%= simple_form_for(@antibody, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :target, as: :text, input_html: { rows: "1"}, :placeholder => "Target name" %>
-  <%= f.input :vendor, as: :text, input_html: { rows: "1"}, :placeholder => "Vendor name" %>
-  <%= f.input :product_ID, as: :text, input_html: { rows: "1"}, :placeholder => "Product_ID" %>
+  <%= f.input :target, :placeholder => "Target name" %>
+  <%= f.input :vendor, :placeholder => "Vendor name" %>
+  <%= f.input :product_ID, :placeholder => "Product ID" %>
   <%= f.input :description, as: :text, input_html: { rows: "3"}, :placeholder => "Briefly describe the antibody" %>
 
   <div class="form-actions">
