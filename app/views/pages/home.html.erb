@@ -4,8 +4,8 @@
 		</br>
 		</br>
 			<p>
-					<%= link_to "Search Antibodies", "#", class: "btn btn-info btn-large" %>
-					<%= link_to "Search Protocols", index_path, class: "btn btn-info btn-large" %>
+					<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %>
+					<%= link_to "Search Protocols", protocols_path, class: "btn btn-info btn-large" %>
 			</p>
 	</div>
 <% else %>
@@ -16,8 +16,8 @@
 		</p>
 		<p>
 			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-large" %>
-			<%= link_to "Search Antibodies", "#", class: "btn btn-info btn-large" %>
-			<%= link_to "Search Protocols", index_path, class: "btn btn-info btn-large" %>
+			<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %>
+			<%= link_to "Search Protocols", protocols_path, class: "btn btn-info btn-large" %>
 		</p>
 	</div>
 <% end %>
