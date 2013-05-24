@@ -26,7 +26,17 @@
 			<%= link_to 'Edit Antibody', edit_antibody_path(@antibody), class: "btn btn-primary" %> |
 			<%= link_to 'Destroy Antibody', @antibody, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			</p>
+
+			<br />
+			
+			<p>
+				<%= pluralize @antibody.reputation_for(:votes).to_i, "rating" %> |
+				<%= link_to "Approve", vote_antibody_path(@antibody, type: "up"), method: "post" %> | 
+				<%= link_to "Disapprove", vote_antibody_path(@antibody, type: "down"), method: "post" %>
+			</p>
 		</div>
+
 		<%= link_to 'Back to Index', antibodies_path %>
+
 	</div>
 </div>

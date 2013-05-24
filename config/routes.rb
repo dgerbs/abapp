@@ -2,7 +2,10 @@ Abapp::Application.routes.draw do
 
   get "users/show"
 
-resources :antibodies, :protocols
+resources :protocols
+resources :antibodies do
+  member { post :vote }
+end
 
 devise_for :users
 

@@ -9,4 +9,6 @@ class Antibody < ActiveRecord::Base
   belongs_to :user
   has_many :protocols, :through => :users
 
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
 end

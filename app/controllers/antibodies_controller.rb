@@ -3,7 +3,7 @@ class AntibodiesController < ApplicationController
   # GET /antibodies
   # GET /antibodies.json
   def index
-    @antibodies = Antibody.all
+    @antibodies = Antibody.find_with_reputation(:votes, :all, order: "votes desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,5 +80,12 @@ class AntibodiesController < ApplicationController
       format.html { redirect_to antibodies_url, notice: 'Antibody was successfully deleted.' }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @antibody = Antibody.find(params[:id])
+    @antibody.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for your rating!"
   end
 end
