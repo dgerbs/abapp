@@ -11,3 +11,4 @@ class User < ActiveRecord::Base
 
   has_many :antibodies
   has_many :protocols
+end
