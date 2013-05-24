@@ -94,10 +94,8 @@ ActiveRecord::Schema.define(:version => 20130524225641) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
-    t.integer  "antibody_id"
   end
 
-  add_index "users", ["antibody_id"], :name => "index_users_on_antibody_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
