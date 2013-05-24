@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524172711) do
+ActiveRecord::Schema.define(:version => 20130524225641) do
 
   create_table "antibodies", :force => true do |t|
     t.string   "target"
@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(:version => 20130524172711) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "protocol_id"
+    t.integer  "user_id"
   end
 
   add_index "antibodies", ["protocol_id"], :name => "index_antibodies_on_protocol_id"
+  add_index "antibodies", ["user_id"], :name => "index_antibodies_on_user_id"
 
   create_table "protocols", :force => true do |t|
     t.string   "description"
