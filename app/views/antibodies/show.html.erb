@@ -31,8 +31,8 @@
 			
 			<p>
 				<%= pluralize @antibody.reputation_for(:votes).to_i, "rating" %> |
-				<%= link_to "Approve", vote_antibody_path(@antibody, type: "up"), method: "post" %> | 
-				<%= link_to "Disapprove", vote_antibody_path(@antibody, type: "down"), method: "post" %>
+					<%= link_to "Approve", vote_antibody_path(@antibody, type: "up"), method: "post" %> | 
+					<%= link_to "Disapprove", vote_antibody_path(@antibody, type: "down"), method: "post" %>
 			</p>
 		</div>
 
