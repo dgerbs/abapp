@@ -3,11 +3,13 @@ Abapp::Application.routes.draw do
   get "users/show"
 
 resources :protocols
+
 resources :antibodies do
   member { post :vote }
 end
 
 devise_for :users
+match 'antibodies/:id' => 'antibodies#show'
 
 root :to => 'pages#home'
 

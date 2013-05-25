@@ -3,7 +3,7 @@ class ProtocolsController < ApplicationController
   # GET /protocols
   # GET /protocols.json
   def index
-    @protocols = Protocol.all
+    @protocols = Protocol.order("created_at desc")
     
     respond_to do |format|
       format.html # index.html.erb

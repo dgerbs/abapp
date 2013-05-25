@@ -7,7 +7,7 @@ class Antibody < ActiveRecord::Base
   validates :vendor, presence: true
   
   belongs_to :user
-  has_many :protocols, :through => :users
+  has_many :protocols
 
   has_reputation :votes, source: :user, aggregated_by: :sum
 
