@@ -45,7 +45,7 @@ class ProtocolsController < ApplicationController
 
     respond_to do |format|
       if @protocol.save
-        format.html { redirect_to antibodies_url, notice: 'Protocol was successfully created.' }
+        format.html { redirect_to protocols_url, notice: 'Protocol was successfully created.' }
         format.json { render json: @protocol, status: :created, location: @protocol }
       else
         format.html { render action: "new" }

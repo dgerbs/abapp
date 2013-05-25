@@ -1,31 +1,26 @@
 <h1>Listing Protocols</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @protocols.each do |protocol| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= protocol.description %>
-            <p>
-              <em>by <%= protocol.user.name %></em>
-            </p>
-        </td>
-        <td><%= link_to 'Show', protocol %></td>
-        <% if current_user == protocol.user %>
-          <td><%= link_to 'Edit', edit_protocol_path(protocol) %></td>
-          <td><%= link_to 'Destroy', protocol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <th>User Application Statement</th>
+        <th>Cell or Tissue Model</th>
+        <th>Description</th>
+        <th>Author</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @protocols.each do |protocol| %>
+        <tr>
+          <td><%= protocol.statement %></td>
+          <td><%= protocol.cell %></td>
+          <td><%= protocol.description %></td>
+          <td><em><%= protocol.user.name %></em></td>
+          <td><%= link_to 'Info', protocol, class: "btn btn-info" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <%= link_to 'New Protocol', new_protocol_path %> | 
 <%= link_to "View Antibodies", antibodies_path %>
