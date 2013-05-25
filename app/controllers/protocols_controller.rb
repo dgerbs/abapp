@@ -4,7 +4,7 @@ class ProtocolsController < ApplicationController
   # GET /protocols.json
   def index
     @protocols = Protocol.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @protocols }

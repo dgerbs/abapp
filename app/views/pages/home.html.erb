@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
 	<div class="hero-unit">
-		<h1>Welcome, <%= current_user.name %>! You're logged in!</h1>
+		<h2>Welcome, <%= current_user.name %>! You're logged in!</h2>
 		</br>
 		</br>
 			<p>
-					<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %>
+					<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %> | 
 					<%= link_to "Search Protocols", protocols_path, class: "btn btn-info btn-large" %>
 			</p>
 	</div>
@@ -15,8 +15,8 @@
 			This is the production site for the AB application.
 		</p>
 		<p>
-			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-large" %>
-			<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %>
+			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-large" %> | 
+			<%= link_to "Search Antibodies", antibodies_path, class: "btn btn-info btn-large" %> | 
 			<%= link_to "Search Protocols", protocols_path, class: "btn btn-info btn-large" %>
 		</p>
 	</div>
