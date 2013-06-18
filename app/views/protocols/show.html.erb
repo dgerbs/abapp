@@ -56,7 +56,7 @@
 			<br />
 
 			<% if current_user == @protocol.user %>
-				<%= link_to 'Edit Protocol', edit_protocol_path(@protocol), class: "btn btn-primary" %> |
+				<%= link_to 'Edit Protocol', edit_protocol_path(@protocol), class: "btn btn-primary" %>
 				<%= link_to 'Destroy Protocol', @protocol, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			<% end %>			
 		</div>
