@@ -15,6 +15,8 @@ root :to => 'pages#home'
 
 get 'about' => 'pages#about'
 get 'contact' => 'pages#contact'
+get 'products' => 'pages#products'
+get 'team' => 'pages#team'
 
 match 'antibodies' => 'antibodies#index', :via => :get
 match 'protocols' => 'protocols#index', :via => :get
