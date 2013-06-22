@@ -15,6 +15,7 @@ class AntibodiesController < ApplicationController
   # GET /antibodies/1.json
   def show
     @antibody = Antibody.find(params[:id])
+    @protocols = @antibody.protocols(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
