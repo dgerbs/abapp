@@ -10,6 +10,7 @@ end
 
 devise_for :users
 match 'antibodies/:id' => 'antibodies#show'
+match 'protocols/:id' => 'protocols#show'
 
 root :to => 'pages#home'
 

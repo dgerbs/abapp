@@ -9,6 +9,8 @@ class Antibody < ActiveRecord::Base
   belongs_to :user
   has_many :protocols
 
+  validates :protocol_id, presence: true
+
   has_reputation :votes, source: :user, aggregated_by: :sum
 
 end

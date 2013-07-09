@@ -24,7 +24,7 @@
 			<br />
 			
 			<p>
-			<%= link_to "Add Protocol",  '#', class: "btn btn-success" %>
+			<%= link_to "Add Protocol",  new_protocol_path, class: "btn btn-success" %>
 			<%= link_to 'Edit Antibody', edit_antibody_path(@antibody), class: "btn btn-primary" %>
 			<%= link_to 'Destroy Antibody', @antibody, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 			</p>
@@ -40,9 +40,10 @@
 
 		<br />
 
-		<div class="well">
-			<h4>Protocol list rendered here.</h4>
-		</div>
+		<h3>Protocols (<%= @protocol.count %>)</h3>
+				<ol class="protocols">
+					<%= @protocol %>
+				</ol>
 
 		<%= link_to 'Back to Index', antibodies_path %>
 
