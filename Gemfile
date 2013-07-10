@@ -5,7 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'activerecord-reputation-system', require: 'reputation_system'
-
+gem "bcrypt-ruby", '~> 3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do

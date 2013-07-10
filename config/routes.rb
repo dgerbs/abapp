@@ -1,6 +1,8 @@
 Abapp::Application.routes.draw do
+  
+get "users/show"
 
-  get "users/show"
+root :to => 'pages#home'
 
 resources :protocols
 
@@ -12,7 +14,6 @@ devise_for :users
 match 'antibodies/:id' => 'antibodies#show'
 match 'protocols/:id' => 'protocols#show'
 
-root :to => 'pages#home'
 
 get 'about' => 'pages#about'
 get 'contact' => 'pages#contact'
@@ -71,6 +72,7 @@ match 'protocols' => 'protocols#index', :via => :get
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
