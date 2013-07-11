@@ -8,9 +8,11 @@ resources :protocols
 
 resources :antibodies do
   member { post :vote }
+  resources :protocols
 end
 
 devise_for :users
+match 'users/:id' => 'users#show'
 match 'antibodies/:id' => 'antibodies#show'
 match 'protocols/:id' => 'protocols#show'
 

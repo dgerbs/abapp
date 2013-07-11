@@ -3,8 +3,8 @@ class ProtocolsController < ApplicationController
   # GET /protocols
   # GET /protocols.json
   def index
-    @protocols = Protocol.order("created_at desc")
-    
+    @protocols = Protocol.order("created_at desc").page(params[:page]).per_page(10)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @protocols }
@@ -41,11 +41,14 @@ class ProtocolsController < ApplicationController
   # POST /protocols
   # POST /protocols.json
   def create
+    @antibody = Antibody.find(params[:antibody_id])
     @protocol = current_user.protocols.new(params[:protocol])
+    @protocol.antibody = @antibody
+    @protocol.user = current_user
 
     respond_to do |format|
       if @protocol.save
-        format.html { redirect_to protocols_url, notice: 'Protocol was successfully created.' }
+        format.html { redirect_to antibodies_url, notice: 'Protocol was successfully created.' }
         format.json { render json: @protocol, status: :created, location: @protocol }
       else
         format.html { render action: "new" }

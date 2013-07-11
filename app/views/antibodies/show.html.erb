@@ -40,10 +40,18 @@
 
 		<br />
 
-		<h3>Protocols (<%= @protocol.count %>)</h3>
-				<ol class="protocols">
-					<%= @protocol %>
-				</ol>
+<div class="span8">
+    <% if @user.protocol.any? %>
+      	<h3>Protocols (<%= @user.protocol.count %>)</h3>
+      	<ol>
+        	<%= render @protocol %>
+      	</ol>
+      		<%= will_paginate @protocol %>
+      	<% else %>
+      		<h3>Ain't no protocols.</h3>
+    		<% end %>
+  		</div>
+		</div>
 
 		<%= link_to 'Back to Index', antibodies_path %>
 

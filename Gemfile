@@ -5,7 +5,9 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'activerecord-reputation-system', require: 'reputation_system'
-gem "bcrypt-ruby", '~> 3.0.0'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do
